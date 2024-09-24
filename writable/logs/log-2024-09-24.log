@@ -595,3 +595,263 @@ WHERE `user` = :user:
 10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
 11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
 INFO - 2024-09-24 16:03:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-24 16:52:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-24 16:53:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-24 16:53:33 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\xampp\htdocs\project\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\project\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'project', 3306, '', 0)
+#1 C:\xampp\htdocs\project\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\project\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\project\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\project\system\Validation\StrictRules\Rules.php(227): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\project\system\Validation\Validation.php(328): CodeIgniter\Validation\StrictRules\Rules->is_unique('admin', 'user', Array, NULL, 'user')
+#6 C:\xampp\htdocs\project\system\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('user', 'user', 'admin', Array, Array)
+#7 C:\xampp\htdocs\project\system\Controller.php(154): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\project\app\Controllers\Users.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\project\system\CodeIgniter.php(943): App\Controllers\Users->create()
+#10 C:\xampp\htdocs\project\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#11 C:\xampp\htdocs\project\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\project\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using ****: YES) in C:\xampp\htdocs\project\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\project\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\project\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\project\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\project\system\Validation\StrictRules\Rules.php(227): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\project\system\Validation\Validation.php(328): CodeIgniter\Validation\StrictRules\Rules->is_unique('admin', 'user', Array, NULL, 'user')
+#5 C:\xampp\htdocs\project\system\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('user', 'user', 'admin', Array, Array)
+#6 C:\xampp\htdocs\project\system\Controller.php(154): CodeIgniter\Validation\Validation->run()
+#7 C:\xampp\htdocs\project\app\Controllers\Users.php(26): CodeIgniter\Controller->validate(Array)
+#8 C:\xampp\htdocs\project\system\CodeIgniter.php(943): App\Controllers\Users->create()
+#9 C:\xampp\htdocs\project\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#10 C:\xampp\htdocs\project\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\project\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-09-24 16:53:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using ****: YES)
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `user` = :user:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(227): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(328): CodeIgniter\Validation\StrictRules\Rules->is_unique('admin', 'user', [...], null, 'user')
+ 5 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('user', 'user', 'admin', [...], [...])
+ 6 SYSTEMPATH\Controller.php(154): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\Users.php(26): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Users->create()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-24 16:54:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-24 16:55:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-24 16:55:10 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\xampp\htdocs\project\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\project\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'project', 3306, '', 0)
+#1 C:\xampp\htdocs\project\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\project\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\project\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\project\system\Validation\StrictRules\Rules.php(227): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\project\system\Validation\Validation.php(328): CodeIgniter\Validation\StrictRules\Rules->is_unique('admin', 'user', Array, NULL, 'user')
+#6 C:\xampp\htdocs\project\system\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('user', 'user', 'admin', Array, Array)
+#7 C:\xampp\htdocs\project\system\Controller.php(154): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\project\app\Controllers\Users.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\project\system\CodeIgniter.php(943): App\Controllers\Users->create()
+#10 C:\xampp\htdocs\project\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#11 C:\xampp\htdocs\project\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\project\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using ****: YES) in C:\xampp\htdocs\project\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\project\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\project\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\project\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\project\system\Validation\StrictRules\Rules.php(227): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\project\system\Validation\Validation.php(328): CodeIgniter\Validation\StrictRules\Rules->is_unique('admin', 'user', Array, NULL, 'user')
+#5 C:\xampp\htdocs\project\system\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('user', 'user', 'admin', Array, Array)
+#6 C:\xampp\htdocs\project\system\Controller.php(154): CodeIgniter\Validation\Validation->run()
+#7 C:\xampp\htdocs\project\app\Controllers\Users.php(26): CodeIgniter\Controller->validate(Array)
+#8 C:\xampp\htdocs\project\system\CodeIgniter.php(943): App\Controllers\Users->create()
+#9 C:\xampp\htdocs\project\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#10 C:\xampp\htdocs\project\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\project\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-09-24 16:55:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using ****: YES)
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `user` = :user:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(227): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(328): CodeIgniter\Validation\StrictRules\Rules->is_unique('admin', 'user', [...], null, 'user')
+ 5 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('user', 'user', 'admin', [...], [...])
+ 6 SYSTEMPATH\Controller.php(154): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\Users.php(26): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Users->create()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-24 17:23:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-24 17:26:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-24 17:26:03 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\xampp\htdocs\project\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\project\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'project', 3306, '', 0)
+#1 C:\xampp\htdocs\project\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\project\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\project\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\project\system\Validation\StrictRules\Rules.php(227): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\project\system\Validation\Validation.php(328): CodeIgniter\Validation\StrictRules\Rules->is_unique('admin', 'user', Array, NULL, 'user')
+#6 C:\xampp\htdocs\project\system\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('user', 'user', 'admin', Array, Array)
+#7 C:\xampp\htdocs\project\system\Controller.php(154): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\project\app\Controllers\Users.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\project\system\CodeIgniter.php(943): App\Controllers\Users->create()
+#10 C:\xampp\htdocs\project\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#11 C:\xampp\htdocs\project\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\project\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using ****: YES) in C:\xampp\htdocs\project\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\project\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\project\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\project\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\project\system\Validation\StrictRules\Rules.php(227): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\project\system\Validation\Validation.php(328): CodeIgniter\Validation\StrictRules\Rules->is_unique('admin', 'user', Array, NULL, 'user')
+#5 C:\xampp\htdocs\project\system\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('user', 'user', 'admin', Array, Array)
+#6 C:\xampp\htdocs\project\system\Controller.php(154): CodeIgniter\Validation\Validation->run()
+#7 C:\xampp\htdocs\project\app\Controllers\Users.php(26): CodeIgniter\Controller->validate(Array)
+#8 C:\xampp\htdocs\project\system\CodeIgniter.php(943): App\Controllers\Users->create()
+#9 C:\xampp\htdocs\project\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#10 C:\xampp\htdocs\project\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\project\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-09-24 17:26:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using ****: YES)
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `user` = :user:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(227): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(328): CodeIgniter\Validation\StrictRules\Rules->is_unique('admin', 'user', [...], null, 'user')
+ 5 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('user', 'user', 'admin', [...], [...])
+ 6 SYSTEMPATH\Controller.php(154): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\Users.php(26): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Users->create()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-24 17:30:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-24 17:30:32 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\xampp\htdocs\project\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\project\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'project', 3306, '', 0)
+#1 C:\xampp\htdocs\project\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\project\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\project\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\project\system\Validation\StrictRules\Rules.php(227): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\project\system\Validation\Validation.php(328): CodeIgniter\Validation\StrictRules\Rules->is_unique('admin', 'user', Array, NULL, 'user')
+#6 C:\xampp\htdocs\project\system\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('user', 'user', 'admin', Array, Array)
+#7 C:\xampp\htdocs\project\system\Controller.php(154): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\project\app\Controllers\Users.php(26): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\project\system\CodeIgniter.php(943): App\Controllers\Users->create()
+#10 C:\xampp\htdocs\project\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#11 C:\xampp\htdocs\project\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\project\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using ****: YES) in C:\xampp\htdocs\project\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\project\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\project\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\project\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\project\system\Validation\StrictRules\Rules.php(227): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\project\system\Validation\Validation.php(328): CodeIgniter\Validation\StrictRules\Rules->is_unique('admin', 'user', Array, NULL, 'user')
+#5 C:\xampp\htdocs\project\system\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('user', 'user', 'admin', Array, Array)
+#6 C:\xampp\htdocs\project\system\Controller.php(154): CodeIgniter\Validation\Validation->run()
+#7 C:\xampp\htdocs\project\app\Controllers\Users.php(26): CodeIgniter\Controller->validate(Array)
+#8 C:\xampp\htdocs\project\system\CodeIgniter.php(943): App\Controllers\Users->create()
+#9 C:\xampp\htdocs\project\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#10 C:\xampp\htdocs\project\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\project\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-09-24 17:30:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using ****: YES)
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `user` = :user:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(227): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(328): CodeIgniter\Validation\StrictRules\Rules->is_unique('admin', 'user', [...], null, 'user')
+ 5 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('user', 'user', 'admin', [...], [...])
+ 6 SYSTEMPATH\Controller.php(154): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\Users.php(26): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Users->create()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-09-24 17:31:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-24 17:32:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-24 17:32:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-24 17:32:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-09-24 17:32:47 --> mysqli_sql_exception: Unknown column 'updated_at' in 'field list' in C:\xampp\htdocs\project\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\project\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\project\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\project\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\project\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\project\system\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\project\system\BaseModel.php(805): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\project\system\Model.php(749): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\project\app\Controllers\Users.php(34): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\project\system\CodeIgniter.php(943): App\Controllers\Users->create()
+#9 C:\xampp\htdocs\project\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#10 C:\xampp\htdocs\project\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\project\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-09-24 17:32:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`user`, `password`, `name`, `email`, `active`, `activation_token`, `created_at`, `updated_at`) VALUES (:user:, :password:, :name:, :email:, :active:, :activation_token:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(805): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Users.php(34): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Users->create()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-24 17:32:47 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`user`, `password`, `name`, `email`, `active`, `activation_token`, `created_at`, `updated_at`) VALUES (\'admin\', \'$2y$10$q.J35X7LkoRd5.uoenIsKuDa5l2qDuYf5c8QM2FGblbEkM0ug.aAi\', \'abner\', \'admin@codigosdeprogramacion.com\', 0, \'e8c669f6551d390ec41e8ae54f8951a2c3cb1597\', \'2024-09-24 17:32:47\', \'2024-09-24 17:32:47\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`user`, `password`, `name`, `email`, `active`, `activation_token`, `created_at`, `updated_at`) VALUES (\'admin\', \'$2y$10$q.J35X7LkoRd5.uoenIsKuDa5l2qDuYf5c8QM2FGblbEkM0ug.aAi\', \'abner\', \'admin@codigosdeprogramacion.com\', 0, \'e8c669f6551d390ec41e8ae54f8951a2c3cb1597\', \'2024-09-24 17:32:47\', \'2024-09-24 17:32:47\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`user`, `password`, `name`, `email`, `active`, `activation_token`, `created_at`, `updated_at`) VALUES (:user:, :password:, :name:, :email:, :active:, :activation_token:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(805): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Users.php(34): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Users->create()
+ 9 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-24 17:32:47 --> [Caused by] mysqli_sql_exception: Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `users` (`user`, `password`, `name`, `email`, `active`, `activation_token`, `created_at`, `updated_at`) VALUES (\'admin\', \'$2y$10$q.J35X7LkoRd5.uoenIsKuDa5l2qDuYf5c8QM2FGblbEkM0ug.aAi\', \'abner\', \'admin@codigosdeprogramacion.com\', 0, \'e8c669f6551d390ec41e8ae54f8951a2c3cb1597\', \'2024-09-24 17:32:47\', \'2024-09-24 17:32:47\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`user`, `password`, `name`, `email`, `active`, `activation_token`, `created_at`, `updated_at`) VALUES (\'admin\', \'$2y$10$q.J35X7LkoRd5.uoenIsKuDa5l2qDuYf5c8QM2FGblbEkM0ug.aAi\', \'abner\', \'admin@codigosdeprogramacion.com\', 0, \'e8c669f6551d390ec41e8ae54f8951a2c3cb1597\', \'2024-09-24 17:32:47\', \'2024-09-24 17:32:47\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`user`, `password`, `name`, `email`, `active`, `activation_token`, `created_at`, `updated_at`) VALUES (\'admin\', \'$2y$10$q.J35X7LkoRd5.uoenIsKuDa5l2qDuYf5c8QM2FGblbEkM0ug.aAi\', \'abner\', \'admin@codigosdeprogramacion.com\', 0, \'e8c669f6551d390ec41e8ae54f8951a2c3cb1597\', \'2024-09-24 17:32:47\', \'2024-09-24 17:32:47\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`user`, `password`, `name`, `email`, `active`, `activation_token`, `created_at`, `updated_at`) VALUES (:user:, :password:, :name:, :email:, :active:, :activation_token:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(327): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(805): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(749): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Users.php(34): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Users->create()
+10 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

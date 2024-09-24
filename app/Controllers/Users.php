@@ -59,6 +59,22 @@ class Users extends BaseController
         return $this->showMessage($title , $message);
 
     }
+    public function activateUser($token){
+        $userModel = new UsersModel();
+        $user = $userModel->where(['activation_token' => $token, 'active' => 0])->first();
+    
+    if ($user){
+        $userModel->update($user['id'],
+        [
+            'active' => 0,
+            'activation_token' => ''
+        ]);
+
+        return $this->showMessage('Cuenta Activada.', 'Tu cuenta ha sido activada.');
+    }
+
+    return $this->showMessage('Ocurrio un error.', 'Por favor, intenta niuevamente mas tarde.');
+    }
 
     private function showMessage($title , $message){
         $data = [ 
