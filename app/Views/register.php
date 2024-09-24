@@ -10,17 +10,19 @@
             <?= csrf_field();?>
             <div class="mb-3">
                 <label class="mb-2" for="name">Nombre</label>
-                <input type="text" class="form-control" name="name" id="name" value="" required autofocus>
+                <input type="text" class="form-control" name="name" id="name" value="<?= set_value('name');?>" required
+                    autofocus>
             </div>
 
             <div class="mb-3">
                 <label class="mb-2" for="email">Correo electrónico</label>
-                <input type="email" class="form-control" name="email" id="email" value="" required>
+                <input type="email" class="form-control" name="email" id="email" value="<?= set_value('email');?>"
+                    required>
             </div>
 
             <div class="mb-3">
                 <label class="mb-2" for="user">Usuario</label>
-                <input type="text" class="form-control" name="user" id="user" value="" required>
+                <input type="text" class="form-control" name="user" id="user" value="<?= set_value('user');?>" required>
             </div>
 
             <div class="mb-3">
@@ -40,7 +42,6 @@
 
         <?php if(session()->getFlashdata('errors') !== null):?>
         <div class="alert alert-danger my-3" role="alert">
-
             <?= session()->getFlashdata('errors');?>
         </div>
         <?php endif; ?>
