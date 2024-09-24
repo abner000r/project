@@ -48,7 +48,7 @@
     </div>
     <div class="card-footer py-3 border-0">
         <div class="text-center">
-            <a href="login.html">Iniciar sesión</a>
+            <a href="<?= base_url('');?>">Iniciar sesión</a>
         </div>
     </div>
 </div>
